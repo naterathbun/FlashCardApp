@@ -5,8 +5,19 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:FlashCardApp"
         mc:Ignorable="d"
-        Title="MainWindow" Height="350" Width="525">
+        Title="Flash Card Viewer by Nathan Rathbun" Height="500" Width="800" ResizeMode="CanMinimize" WindowStartupLocation="CenterScreen">
     <Grid>
-        
+        <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="300" Margin="42,24,0,0" VerticalAlignment="Top" Width="300">
+            <TextBlock x:Name="questionTextBox" TextWrapping="Wrap" Text="Questions go here" FontSize="16" Width="250" Height="250" Margin="25"/>
+        </Border>
+        <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="300" Margin="442,24,0,0" VerticalAlignment="Top" Width="300">
+            <TextBlock x:Name="answerTextBox" TextWrapping="Wrap" Text="Answers go here" Width="250" Height="250" Margin="25" FontSize="16"/>
+        </Border>
+        <Button x:Name="revealHideButton" Content="Reveal&#xD;&#xA; Hide" HorizontalAlignment="Left" Margin="342,344,0,0" VerticalAlignment="Top" Width="100" Height="100" FontSize="24" HorizontalContentAlignment="Center" Background="#FFDDDDDD"/>
+        <Button x:Name="previousQuestionButton" Content="Previous" HorizontalAlignment="Left" Margin="229,369,0,0" VerticalAlignment="Top" Width="100" Height="50" FontSize="24" Background="#FFDDDDDD"/>
+        <Button x:Name="nextQuestionButton" Content="Next" HorizontalAlignment="Left" Margin="454,369,0,0" VerticalAlignment="Top" Width="100" Height="50" FontSize="24" Background="#FFDDDDDD"/>
+        <Button x:Name="loadFileButton" Content="Load File" HorizontalAlignment="Left" Margin="42,344,0,0" VerticalAlignment="Top" Width="100" Height="100" FontSize="16" Background="#FFDDDDDD"/>
+        <Button x:Name="randomizeButton" Content="Randomize" HorizontalAlignment="Left" Margin="642,344,0,0" VerticalAlignment="Top" Width="100" Height="100" FontSize="16" Background="#FFDDDDDD"/>
+
     </Grid>
 </Window>
