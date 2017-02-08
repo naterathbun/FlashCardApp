@@ -1,0 +1,102 @@
+1) What is a delegate?
+A delegate is a named type that defines a particular kind of method. Just as a class definition lays out all the members for the given kind of object it defines, the delegate lays out the method signature for the kind of method it defines. As such, a delegate is a function pointer and it defines what that function looks like.
+2) What is the difference between a struct and a class?
+A struct is a value type, a class is a reference type. When we instantiate a class, memory is allocated on the heap. When we instantiate a struct, memory is instead allocated on the stack. Classes can have explicit parameter-less constructors, but structs can't. Classes support inheritance, structs do not. Both classes and structs can implement interfaces.
+3) What makes up a method signature?
+Access Modifier, Return Type, Name, Parameters
+4) What are the pros and cons of a hashlist?
+Advantage of a hashlist: Easy to search, it has a Big O: 1. You just enter the unique ID of what you want. Disadvantage of a hashlist: no order to the list.
+5) What is a Linked List?
+Each cell refers to the ones around it, makes it faster if you are constantly inserting things and there's a ton of values. Each cell holds two values: the actual value, and a pointer to the location in memory of the next cell. Advantage: easy add/remove/move of values. Disadvantage: takes more time to go through the list (have to go one by one)
+6) Give a metaphor to describe a delegate in C#.
+When a head of state dies, the President of the United States typically does not have time to attend the funeral personally. Instead, he dispatches a delegate. Often this delegate is the Vice President, but sometimes the VP is unavailable and the President must send someone else, such as the Secretary of State or even the First Lady. He does not want to “hardwire” his delegated authority to a single person; he might delegate this responsibility to anyone who is able to execute the correct international protocol. The President defines in advance what responsibility will be delegated (attend the funeral), what parameters will be passed (condolences, kind words), and what value he hopes to get back (good will). He then assigns a particular person to that delegated responsibility at “runtime” as the course of his presidency progresses.
+7) What are the three types of Generic delegates in C#?
+There are three types of generic delegates in C# - 1) Func, 2) Action, 3) Predicate
+8) Give some examples of when delegates would be used.
+Uses of delegates in C# - Callback Mechanism, Asynchronous Processing, Abstract and Encapsulate method, Multicasting
+9) Why would you use a Lock statement in C#?
+Lock will make sure one thread will not intercept the other thread which is running the part of code. So lock statement will make the thread wait, block till the object is being released.
+10) Which are the loop types available in C#?
+Three main types: For, While, Do.. While, Foreach
+11) What is the difference between “continue” and “break” statements in C#?
+A “continue” statement is used to pass the control to next iteration. This statement can be used with – “while”, “for”, “foreach” loops. A “break” statement is used to exit a loop.
+12) What is meant by "boxing" and "unboxing" in C#?
+Boxing is the process of converting from a value type to a reference type. UnBoxing is just the opposite of boxing: the process of converting a reference type to a value type.
+13) What are the types of unit test cases in C#?
+Positive Test cases(done with correct data to check for correct output), Negative Test cases (done with broken or missing data to check for proper handling), Exception Test cases (done with exceptions or unusable inputs to check for proper exception handling).
+14) What are the various collection types in C#?
+ArrayList, Stack, Queue, List, HashTable, Bit Array
+15) What are the possible states of a thread in C#?
+Unstarted, Ready, Not Runnable, Dead
+16) What is a class ?
+A class is the generic definition of what an object is. A Class describes all the attributes of the object, as well as the methods that implement the behavior of the member object. In other words, class is a template or blueprint of an object. An object is what we get when we instantiate a class.
+17) What is Polymorphism in C# ?
+The ability of C# to process objects in different ways depending on their data type or class. There are two types of polymorphism: Compile time polymorphism (for example: Overloading) and Runtime polymorphism (for example: Overriding).
+18) What is a collection in C#?
+A collection is a container for instances of other classes. All collections implement the ICollection interface which in turn implements the IEnumerable interface. Examples: List, Queue, Stack.
+19) How would you sort an array in the opposite order it's in?
+First use Array.Sort(); then Array.Reverse();
+20) In what different ways can you overload a method?
+Different parameter types, different number of parameters, different order of parameters
+21) What are the different types of errors in C#?
+Compilation Errors, Run-Time Errors, Configuration Errors and Parser Errors
+22) In a single line of code, create a text file and write a string to it.
+System.IO.File.WriteAllText(@"c:\filepath....MyFile.txt", "Some string stuff");
+23) When you pass a value-type variable into a method as an argument. The method changes the variable, but when the method returns the variable has not changed. Why not?
+Passing a value type variable into a method creates a copy of that variable - it is not directly operated upon. If you pass in a reference, it will be. 
+24) Is a string a value or reference type?
+Strings are reference types
+25) What is garbage collection?
+The mechanism that allows a computer to detect when an object is no longer accessible, that is, nothing is referring to it. It then releases the memory associated with that object to be used again by your program.
+26) What is a var and how is it used?
+A var allows us to decalre a variable whose type is implicitly inferred from the initializing expression.
+27) What are the limitations of using var?
+var variables cannot be initialized as null, they must be declared and initialized in the same statement, and they can't be used as a member of a class.
+28) When should one use System.Text.StringBuilder instead of System.String?
+StringBuilder is more efficient when there are large amounts of string manipulation being done. Because strings are immutable, every time a string is changed it creates a new instance in memory. StringBuilder reduces this. 
+29) When MUST you declare a class as abstract?
+When 1) the class itself is inherited from another abstract class, but not all base abstract classes are overridden, or 2) when at least one of its methods is labeled as abstract.
+30) What does Assert() do and when would you use it?
+It takes in a boolean condition as a parameter and shows an error if the condition is false. It is widely used in unit testing to ensure expected results are obtained.
+31) How can we prevent a class from being inherited from?
+Give it the sealed keyword. 
+32) Can an array store multiple data types?
+No, an array can only hold a single data type.
+33) What are some examples of generic classes?
+List<T>, Queue<T>, Stack<T>, LinkedList<T>, HashSet<T>
+34) In what order are objects processed in a Queue?
+First in, First out (FIFO)
+35) In what order are objects processed in a Stack?
+First in, last out (FILO)
+36) What method is used to add an item to the end of a queue?
+Enqueue()
+37) What method is used to remove an item from the front of a queue?
+Dequeue()
+38) What method is used to add an item onto a stack?
+Push()
+39) What method is used to return an item from the top of a stack?
+Pop()
+40) What advantage does TryParse() have over Parse()?
+TryParse will return a boolean if it was successful or not, and will also return the converted value if successful via the Out parameter.
+41) What is the difference between a.Equals(b) and a == b ?
+For value types, they are the same. For reference types, == returns true if and only if both a and b point to the same memory location. Equals() will comapre their value. It is recommended to use == for value types and Equals() for reference types.
+42) If it is a reference type, why does == work for strings? 
+By default, C# has overloaded the == operator to act as if strings are value types.
+43) Why is the 'static' keyword used before main?
+Because the program begins execution at main, it is called before the creation of any objects. By marking it abstract, we can call main without first instantiating it. 
+44) What does it mean that C# is a Strongly Typed language?
+It means it has very strict rules regarding variable types. A string cannot be passed as an integer without being first explicitly converted, for example. 
+45) Can a value-type be passed by reference to a method?
+Yes, by prefacing it with the 'ref' keyword in the parameters. 
+46) What are regular expressions? Why would one use them?
+Regular expressions are a way to identify specific character patterns, for things like validating text such as passwords, parsing data to more structured forms such as into a database, or replacing specific text in a document. 
+47) What are virtual, sealed override and abstract and how do they relate?
+Virtual marks a class or method to be overridden in the derived class. Sealed prevents this from happening. Ovveride is the keyword used in the derived class to actually change the method. Abstract is a way to label a class or method to prevent it from being called or instantiated. 
+48) What is an enum?
+An enum is a special value type which specifies a group of named numeric constants.
+49) What's the difference between a static variable and a constant in C#?
+A static variable is set at run time, can be assigned for reference types and is initialized on constructors. A constant is instead set at compile time, may be assigned value types only, must be initialized at the time of declaration and can only use primitive data types. 
+50) What's the difference between Convert and Parse()? 
+Convert is a class containing methods to change any data type to another. Parse() is specifically used to convert from a string to other data types. 
+
+

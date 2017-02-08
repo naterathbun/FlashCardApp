@@ -135,7 +135,6 @@ namespace FlashCardApp
         }
 
 
-
         public void SetCurrentQuestionID(int newQuestionID)
         {
             CurrentQuestionID = newQuestionID;
