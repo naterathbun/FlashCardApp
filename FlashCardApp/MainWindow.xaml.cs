@@ -74,6 +74,16 @@ namespace FlashCardApp
             }
         }
 
+        private void RandomizeButtonClicked(object sender, RoutedEventArgs e)
+        {
+            if (QuestionFileIsLoaded())
+            {
+                questionAnswerSet.RandomizeQuestionOrder();
+                ShowQuestionBoxText(CurrentQuestionID);
+                HideAnswerBoxText();
+            }
+        }
+
 
         public void OpenFileBrowserAndSetFilePath()
         {
@@ -111,7 +121,7 @@ namespace FlashCardApp
 
         public void ShowQuestionBoxText(int questionIndex)
         {
-                questionTextBox.Text = questionAnswerSet.Questions[questionIndex].Question;
+            questionTextBox.Text = questionAnswerSet.Questions[questionIndex].Question;
         }
 
         public void ShowAnswerBoxText(int questionIndex)
@@ -131,7 +141,7 @@ namespace FlashCardApp
             CurrentQuestionID = newQuestionID;
         }
 
-        private void IncreaseCurrentQuestionID()
+        public void IncreaseCurrentQuestionID()
         {
             CurrentQuestionID++;
             if (CurrentQuestionID > questionAnswerSet.Questions.Count() - 1)
@@ -140,7 +150,7 @@ namespace FlashCardApp
             }
         }
 
-        private void DecreaseCurrentQuestionID()
+        public void DecreaseCurrentQuestionID()
         {
             CurrentQuestionID--;
             if (CurrentQuestionID < DefaultQuestionID)
@@ -149,7 +159,7 @@ namespace FlashCardApp
             }
         }
 
-        private bool QuestionFileIsLoaded()
+        public bool QuestionFileIsLoaded()
         {
             if (questionAnswerSet.Questions.Count > 0)
             {
