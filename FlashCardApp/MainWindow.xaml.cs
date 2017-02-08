@@ -29,14 +29,23 @@ namespace FlashCardApp
         }
 
 
-        private void OpenFileBrowserAndSetFilePath(object sender, RoutedEventArgs e)
+
+
+        public void LoadFileButtonClicked(object sender, RoutedEventArgs e)
+        {
+            OpenFileBrowserAndSetFilePath();
+            CreateQuestionsFromFile(QuestionTextFilePath);
+            UpdateQuestionBox();
+            UpdateAnswerbox();
+        }
+
+        public void OpenFileBrowserAndSetFilePath()
         {
             OpenFileDialog openFileDialog = new OpenFileDialog();
             if (openFileDialog.ShowDialog() == true)
             {
                 SetFilePathOfTextFile(openFileDialog);
             }
-            // HEY NATE COME HERE AND CALL TEH FREAKING CREATE QUESTIONS METHOD YOU MORON
         }
 
         public void SetFilePathOfTextFile(OpenFileDialog openFileDialog)
@@ -44,16 +53,15 @@ namespace FlashCardApp
             this.QuestionTextFilePath = openFileDialog.FileName;
         }
 
-
-        private void CreateQuestionsFromFile(string filePath)
+        public void CreateQuestionsFromFile(string filePath)
         {
-            int linesInTextFile= File.ReadLines(filePath).Count();
+            int linesInTextFile = File.ReadLines(filePath).Count();
 
             using (StreamReader sr = new StreamReader(filePath))
             {
                 while (!sr.EndOfStream)
                 {
-                        this.questionAnswerSet.Questions.Add(new QuestionAnswerPair(sr.ReadLine(),sr.ReadLine()));
+                    this.questionAnswerSet.Questions.Add(new QuestionAnswerPair(sr.ReadLine(), sr.ReadLine()));
                 }
             }
         }
@@ -63,5 +71,17 @@ namespace FlashCardApp
             questionTextBox.Text = questionAnswerSet.Questions[0].Question;
         }
 
+        public void UpdateAnswerbox()
+        {
+            answerTextBox.Text = questionAnswerSet.Questions[0].Answer;
+        }
+
     }
+
+
+    /*
+     * Next things to do: figure out how to do the show/hide based on QAPair property IsShown, add previous/next functionality, add randomize functionality
+     */
+
+         
 }

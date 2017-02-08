@@ -9,8 +9,9 @@ namespace FlashCardApp
 {
     public class QuestionAnswerPair
     {
-        public string Question { get; set; }
-        public string Answer { get; set; }
+        public string Question { get; private set; }
+        public string Answer { get; private set; }
+
         public bool IsShown { get; set; }
 
         public QuestionAnswerPair(string question, string answer)
