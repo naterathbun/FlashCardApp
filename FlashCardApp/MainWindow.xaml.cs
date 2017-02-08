@@ -22,6 +22,8 @@ namespace FlashCardApp
     {
         QuestionAnswerSet questionAnswerSet = new QuestionAnswerSet();
         public string QuestionTextFilePath { get; set; }
+        public int CurrentQuestionID { get; set; }
+        const int DefaultQuestionID = 0;
 
         public MainWindow()
         {
@@ -29,15 +31,49 @@ namespace FlashCardApp
         }
 
 
-
-
         public void LoadFileButtonClicked(object sender, RoutedEventArgs e)
         {
             OpenFileBrowserAndSetFilePath();
             CreateQuestionsFromFile(QuestionTextFilePath);
-            UpdateQuestionBox();
-            UpdateAnswerbox();
+            SetCurrentQuestionID(DefaultQuestionID);
+            DisplayNewQuestionAnswerPair();
         }
+
+        private void RevealHideButtonClicked(object sender, RoutedEventArgs e)
+        {
+            if (QuestionFileIsLoaded())
+            {
+                if (answerTextBox.Text == "")
+                {
+                    answerTextBox.Text = questionAnswerSet.Questions[CurrentQuestionID].Answer;
+                }
+                else
+                {
+                    answerTextBox.Text = "";
+                }
+            }
+        }
+
+        private void NextQuestionButtonClicked(object sender, RoutedEventArgs e)
+        {
+            if (QuestionFileIsLoaded())
+            {
+                IncreaseCurrentQuestionID();
+                ShowQuestionBoxText(CurrentQuestionID);
+                HideAnswerBoxText();
+            }
+        }
+
+        private void PreviousQuestionButtonClicked(object sender, RoutedEventArgs e)
+        {
+            if (QuestionFileIsLoaded())
+            {
+                DecreaseCurrentQuestionID();
+                ShowQuestionBoxText(CurrentQuestionID);
+                HideAnswerBoxText();
+            }
+        }
+
 
         public void OpenFileBrowserAndSetFilePath()
         {
@@ -66,22 +102,68 @@ namespace FlashCardApp
             }
         }
 
-        public void UpdateQuestionBox()
+
+        public void DisplayNewQuestionAnswerPair()
         {
-            questionTextBox.Text = questionAnswerSet.Questions[0].Question;
+            ShowQuestionBoxText(CurrentQuestionID);
+            HideAnswerBoxText();
         }
 
-        public void UpdateAnswerbox()
+        public void ShowQuestionBoxText(int questionIndex)
         {
-            answerTextBox.Text = questionAnswerSet.Questions[0].Answer;
+                questionTextBox.Text = questionAnswerSet.Questions[questionIndex].Question;
+        }
+
+        public void ShowAnswerBoxText(int questionIndex)
+        {
+            answerTextBox.Text = questionAnswerSet.Questions[questionIndex].Answer;
+        }
+
+        public void HideAnswerBoxText()
+        {
+            answerTextBox.Text = "";
+        }
+
+
+
+        public void SetCurrentQuestionID(int newQuestionID)
+        {
+            CurrentQuestionID = newQuestionID;
+        }
+
+        private void IncreaseCurrentQuestionID()
+        {
+            CurrentQuestionID++;
+            if (CurrentQuestionID > questionAnswerSet.Questions.Count() - 1)
+            {
+                CurrentQuestionID = DefaultQuestionID;
+            }
+        }
+
+        private void DecreaseCurrentQuestionID()
+        {
+            CurrentQuestionID--;
+            if (CurrentQuestionID < DefaultQuestionID)
+            {
+                CurrentQuestionID = questionAnswerSet.Questions.Count() - 1;
+            }
+        }
+
+        private bool QuestionFileIsLoaded()
+        {
+            if (questionAnswerSet.Questions.Count > 0)
+            {
+                return true;
+            }
+            return false;
         }
 
     }
 
 
     /*
-     * Next things to do: figure out how to do the show/hide based on QAPair property IsShown, add previous/next functionality, add randomize functionality
+     * Next things to do: figure out how to do the show/hide, add previous/next functionality, add randomize functionality
      */
 
-         
+
 }

@@ -12,23 +12,10 @@ namespace FlashCardApp
         public string Question { get; private set; }
         public string Answer { get; private set; }
 
-        public bool IsShown { get; set; }
-
         public QuestionAnswerPair(string question, string answer)
         {
             this.Question = question;
             this.Answer = answer;
-            this.IsShown = false;
-        }
-
-        public void ShowAnswer()
-        {
-            this.IsShown = true;
-        }
-
-        public void HideAnswer()
-        {
-            this.IsShown = false;
         }
         
     }
