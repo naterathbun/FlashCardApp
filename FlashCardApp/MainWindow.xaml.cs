@@ -37,6 +37,7 @@ namespace FlashCardApp
             CreateQuestionsFromFile(QuestionTextFilePath);
             SetCurrentQuestionID(DefaultQuestionID);
             DisplayNewQuestionAnswerPair();
+            ChangeLoadFileButtonColorToDefault();
         }
 
         private void RevealHideButtonClicked(object sender, RoutedEventArgs e)
@@ -167,12 +168,10 @@ namespace FlashCardApp
             return false;
         }
 
+        public void ChangeLoadFileButtonColorToDefault()
+        {
+            loadFileButton.Background = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#FFDDDDDD"));
+        }
+
     }
-
-
-    /*
-     * Next things to do: figure out how to do the show/hide, add previous/next functionality, add randomize functionality
-     */
-
-
 }

@@ -20,7 +20,7 @@
         <Button x:Name="revealHideButton" Content="Reveal&#xD;&#xA; Hide" HorizontalAlignment="Left" Margin="342,344,0,0" VerticalAlignment="Top" Width="100" Height="100" FontSize="24" HorizontalContentAlignment="Center" Background="#FFDDDDDD" Click="RevealHideButtonClicked"/>
         <Button x:Name="previousQuestionButton" Content="Previous" HorizontalAlignment="Left" Margin="229,369,0,0" VerticalAlignment="Top" Width="100" Height="50" FontSize="24" Background="#FFDDDDDD" Click="PreviousQuestionButtonClicked"/>
         <Button x:Name="nextQuestionButton" Content="Next" HorizontalAlignment="Left" Margin="454,369,0,0" VerticalAlignment="Top" Width="100" Height="50" FontSize="24" Background="#FFDDDDDD" Click="NextQuestionButtonClicked"/>
-        <Button x:Name="loadFileButton" Content="Load File" HorizontalAlignment="Left" Margin="42,344,0,0" VerticalAlignment="Top" Width="100" Height="100" FontSize="16" Background="#FFDDDDDD" Click="LoadFileButtonClicked"/>
+        <Button x:Name="loadFileButton" Content="Load File" HorizontalAlignment="Left" Margin="42,344,0,0" VerticalAlignment="Top" Width="100" Height="100" FontSize="16" Background="#FF22F72F" Click="LoadFileButtonClicked"/>
         <Button x:Name="randomizeButton" Content="Randomize" HorizontalAlignment="Left" Margin="642,344,0,0" VerticalAlignment="Top" Width="100" Height="100" FontSize="16" Background="#FFDDDDDD" Click="RandomizeButtonClicked"/>
 
     </Grid>
