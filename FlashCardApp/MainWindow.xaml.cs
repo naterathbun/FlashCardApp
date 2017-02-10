@@ -38,6 +38,7 @@ namespace FlashCardApp
             SetCurrentQuestionID(DefaultQuestionID);
             DisplayNewQuestionAnswerPair();
             ChangeLoadFileButtonColorToDefault();
+            ChangeControlButtonsToGreen();
         }
 
         private void RevealHideButtonClicked(object sender, RoutedEventArgs e)
@@ -171,6 +172,13 @@ namespace FlashCardApp
         public void ChangeLoadFileButtonColorToDefault()
         {
             loadFileButton.Background = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#FFDDDDDD"));
+        }
+
+        public void ChangeControlButtonsToGreen()
+        {
+            previousQuestionButton.Background = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#FF22F72F"));
+            nextQuestionButton.Background = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#FF22F72F"));
+            revealHideButton.Background = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#FF22F72F"));
         }
 
     }

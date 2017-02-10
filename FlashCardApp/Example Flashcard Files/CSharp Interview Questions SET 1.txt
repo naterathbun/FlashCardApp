@@ -7,7 +7,7 @@ No, Multiple catch blocks can’t be executed. Once the proper catch code executed
 4. What is the difference between public, static and void?
 Public means that the method or variable can be accessed from anywhere. Static means the method or variable is attached to the Class, not a part of an object created from the class. Void means that a method doesn't return anything.
 5. What is an object?  
-An object is an instance of a class through which we access the methods of that class. “New” keyword is used to create an object. A class that creates an object in memory will contain the information about the methods, variables and behavior of that class.
+An object is an instance of a class through which we access the methods of that class. "New" keyword is used to create an object. A class that creates an object in memory will contain the information about the methods, variables and behavior of that class.
 6. Define Constructors.
 A constructor is a member function in a class that has the same name as its class. The constructor is automatically invoked whenever an object class is created. It constructs the values of data members while initializing the class.
 7. What are Jagged Arrays?
@@ -18,7 +18,7 @@ An argument passed as ref must be initialized before passing to the method where
 The using block is used to obtain a resource and use it and then automatically dispose of when the execution of block completed.
 10. What is serialization?  
 When we want to transport an object through network then we have to convert the object into a stream of bytes. The process of converting an object into a stream of bytes is called Serialization. For an object to be serializable, it should implement ISerialize Interface. De-serialization is the reverse process of creating an object from a stream of bytes.
-11. Can “this” be used within a static method?  
+11. Can "this" be used within a static method?  
 No. We can’t use ‘this’ in a static method because we can only use static variables/methods in a static method. Also,'this' refers to the called object and static methods aren't attached to an object.
 12. What is difference between constants and read-only?  
 Constant variables are declared and initialized at compile time. The value can’t be changed afterwards. Read only is used only when we want to assign the value at run time.
@@ -83,13 +83,13 @@ Value types can take either their normal values or a null value. Such types are 
 42. How we can create an array with non-default values?
 We can create an array with non-default values using Enumerable.Repeat.
 43. What is difference between is and as operators in c#?
-“is” operator is used to check the compatibility of an object with a given type and it returns the result as Boolean. “as” operator is used for casting of object to a type or a class.
+"is" operator is used to check the compatibility of an object with a given type and it returns the result as Boolean. "as" operator is used for casting of object to a type or a class.
 44. What’s a multicast delegate?
 A delegate having multiple handlers assigned to it is called multicast delegate. Each handler is assigned to a method.
 45. What are indexers in C# .NET?
 Indexers are known as smart arrays in C#. It allows the instances of a class to be indexed in the same way as array. Eg: public int this[int index]    // Indexer declaration
-46. What is difference between the “throw” and “throw ex” in .NET?
-“Throw” statement preserves original error stack whereas “throw ex” have the stack trace from their throw point. It is always advised to use “throw” because it provides more accurate error information.
+46. What is difference between the "throw" and "throw ex" in .NET?
+"Throw" statement preserves original error stack whereas "throw ex" have the stack trace from their throw point. It is always advised to use "throw" because it provides more accurate error information.
 47. What are C# attributes and its significance?
 C# provides developers a way to define declarative tags on certain entities eg. Class, method etc. are called attributes. The attribute’s information can be retrieved at runtime using Reflection.
 48. How to implement singleton design pattern in C#?
